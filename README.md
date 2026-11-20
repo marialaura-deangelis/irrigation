@@ -6,7 +6,7 @@ Raccolta di repository open source per lo studio, la didattica e l'analisi tecni
 
 ## Repository collegati
 
-**Totale: 24 repository pubblici** (10 della selezione iniziale + 14 nuove aggiunte).
+**Totale: 41 repository pubblici** (10 iniziali + 14 della seconda selezione + 17 della terza selezione).
 
 ### Progettazione idraulica e irrigazione ad aspersione
 
@@ -93,6 +93,55 @@ Questi **14 progetti** si aggiungono ai **10 repository** elencati sopra, per un
 ### Nota sulla qualità delle fonti
 
 I repository hanno livelli di maturità diversi: alcuni sono strumenti scientifici documentati, altri prototipi o sperimentazioni. Prima di integrare algoritmi nei materiali didattici occorre confrontare formule, ipotesi, casi di test e licenze. L'inclusione nel catalogo non rappresenta una validazione indipendente.
+
+
+## Terza selezione: 17 ulteriori repository (20 novembre 2026)
+
+Modelli di idraulica agraria, idrologia e strumenti collegati alla progettazione e gestione dell'irrigazione. **24 precedenti + 17 nuovi = 41 repository.**
+
+### Idraulica agraria e canali
+
+| Progetto | Repository | Applicazioni e limiti | Tipologia |
+| --- | --- | --- | --- |
+| **CRITERIA1D / GEO** | [ARPA-SIMC/CRITERIA1D](https://github.com/ARPA-SIMC/CRITERIA1D) | Modello agro-idrologico: flusso nel suolo, fabbisogno irriguo, drenaggio e risalita capillare. | Modello scientifico |
+| **Canals** | [darwishdasty-oss/Canals](https://github.com/darwishdasty-oss/Canals) | Workbench Python per canali, Manning, profili, paratoie, sifoni e risalti; verificare l'accuratezza dei singoli moduli. | Strumento specialistico |
+| **GRAIN** | [UW-SASWE/GRAIN](https://github.com/UW-SASWE/GRAIN) | Dataset GIS mondiale dei canali irrigui; non è un simulatore idraulico. | Dataset di ricerca |
+| **2DSOILRunoff** | [DennisTimlin-USDA/2DSOILRunoff](https://github.com/DennisTimlin-USDA/2DSOILRunoff) | Simulazione di infiltrazione e ruscellamento; progetto con aggiornamenti meno recenti. | Codice di ricerca |
+
+### Idrologia, falde e analisi GIS
+
+| Progetto | Repository | Applicazioni e limiti | Tipologia |
+| --- | --- | --- | --- |
+| **SPHY** | [FutureWater/SPHY](https://github.com/FutureWater/SPHY) | Modello idrologico distribuito per risorse idriche e scenari irrigui. | Modello scientifico |
+| **SWAT+** | [swat-model/swatplus](https://github.com/swat-model/swatplus) | Modello di bacino per bilancio idrico, gestione agricola, erosione e qualità dell'acqua. | Modello scientifico |
+| **pySWATPlus** | [swat-model/pySWATPlus](https://github.com/swat-model/pySWATPlus) | Libreria Python per gestire e automatizzare input e output SWAT+. | Libreria scientifica |
+| **ParFlow** | [parflow/parflow](https://github.com/parflow/parflow) | Simulazione integrata di flussi superficiali e sotterranei. | Modello scientifico |
+| **FloPy** | [modflowpy/flopy](https://github.com/modflowpy/flopy) | Libreria Python per modelli MODFLOW, falde e prelievi da pozzi. | Libreria scientifica |
+| **pysheds** | [pysheds/pysheds](https://github.com/pysheds/pysheds) | Analisi di DEM, bacini e direzioni del deflusso. | Strumento GIS |
+
+### Evapotraspirazione e irrigazione di precisione
+
+| Progetto | Repository | Applicazioni e limiti | Tipologia |
+| --- | --- | --- | --- |
+| **pyTSEB** | [hectornieto/pyTSEB](https://github.com/hectornieto/pyTSEB) | Modelli di bilancio energetico a due sorgenti e dati termici per ET. | Modello scientifico |
+| **SWIM-RS** | [dgketchum/swim-rs](https://github.com/dgketchum/swim-rs) | Bilancio idrico a scala di campo con dati satellitari e meteo. | Modello scientifico |
+| **WaPOR Translator** | [TimHessels/WaporTranslator](https://github.com/TimHessels/WaporTranslator) | Indicatori FAO WaPOR su produttività dell'acqua e prestazioni irrigue; progetto meno recente. | Strumento di ricerca |
+| **Hybrid Irrigation DSS** | [ascariolo/hybrid-model-irrigation-dss](https://github.com/ascariolo/hybrid-model-irrigation-dss) | Supporto sperimentale alla programmazione irrigua con modelli e machine learning. | Prototipo |
+| **AmuFlow** | [mcpeblocker/amuflow](https://github.com/mcpeblocker/amuflow) | Uso sperimentale di dati satellitari e algoritmi per gestione irrigua. | Prototipo |
+
+### Componentistica e simulazioni didattiche
+
+| Progetto | Repository | Applicazioni e limiti | Tipologia |
+| --- | --- | --- | --- |
+| **OpenValve** | [fabiansteiner/OpenValve](https://github.com/fabiansteiner/OpenValve) | Valvola a pinza open hardware stampabile in 3D per controllo di liquidi e applicazioni irrigue. | Open hardware |
+| **Green-Ampt Interactive Simulator** | [ziyaddmaa/Green-Ampt-Infiltration-Model-Interactive-Simulator](https://github.com/ziyaddmaa/Green-Ampt-Infiltration-Model-Interactive-Simulator) | Simulatore interattivo dell'infiltrazione secondo Green-Ampt; richiede verifica numerica. | Simulatore didattico |
+
+### Criteri per l'utilizzo
+
+- I modelli di bacino e falda integrano la progettazione irrigua, ma non sostituiscono il calcolo delle reti in pressione.
+- Il catalogo non certifica la validazione scientifica dei programmi. Verificare equazioni, ipotesi, input, benchmark e affidabilità dei risultati.
+- Per la riproducibilità dei calcoli annotare versione o commit utilizzato.
+- I collegamenti non copiano codice: prima di integrare software esterno esaminare la relativa licenza.
 
 ## Percorsi di studio e confronto
 
