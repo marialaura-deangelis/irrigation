@@ -4,9 +4,17 @@ Raccolta di repository open source per lo studio, la didattica e l'analisi tecni
 
 > **Tipo di collegamento:** catalogo di riferimenti GitHub, senza importare codice né installare automaticamente dipendenze. I progetti restano autonomi e mantengono le proprie licenze.
 
+## Dove trovare il materiale
+
+- [Catalogo dei 61 repository, in file separato](docs/CATALOGO_COMPLETO.md)
+- [Schede dei 20 progetti appena aggiunti](docs/NUOVI_20_PROGETTI.md)
+- [Guida: collegamenti, codici sorgente e come scaricarli](docs/COME_TROVARE_IL_MATERIALE.md)
+- [Studio numerico OpenIrri / EPANET (documentazione)](examples/README.md)
+- [Script per scaricare i repository esterni sul proprio computer](scripts/scarica_repositories.py)
+
 ## Repository collegati
 
-**Totale: 41 repository pubblici** (10 iniziali + 14 della seconda selezione + 17 della terza selezione).
+**Totale: 61 repository pubblici** (10 iniziali + 14 della seconda selezione + 17 della terza selezione + 20 della quarta selezione).
 
 ### Progettazione idraulica e irrigazione ad aspersione
 
@@ -143,6 +151,58 @@ Modelli di idraulica agraria, idrologia e strumenti collegati alla progettazione
 - Per la riproducibilità dei calcoli annotare versione o commit utilizzato.
 - I collegamenti non copiano codice: prima di integrare software esterno esaminare la relativa licenza.
 
+
+## Quarta selezione: 20 repository aggiunti il 20 novembre 2026
+
+Strumenti per idraulica delle reti, moto in canale, infiltrazione, modellazione delle colture, falde e telerilevamento. Ogni progetto resta nel repository del suo autore: i link non ne importano automaticamente il codice.
+
+### Reti in pressione, pompe e regolazione
+
+| Software | Repository | Applicazione | Pertinenza per l'irrigazione |
+| --- | --- | --- | --- |
+| **EPyT** | [OpenWaterAnalytics/EPyT](https://github.com/OpenWaterAnalytics/EPyT) | Toolkit Python per EPANET: portate, pressioni, pompe, valvole e scenari idraulici. | Alto |
+| **EPyT-Flow** | [WaterFutures/EPyT-Flow](https://github.com/WaterFutures/EPyT-Flow) | Generazione di scenari e dati per simulazioni idrauliche di reti in pressione. | Alto |
+| **EPyT-Control** | [WaterFutures/EPyT-Control](https://github.com/WaterFutures/EPyT-Control) | Sperimentazione di strategie di controllo e regolazione delle reti; non specifico per irrigazione. | Alto |
+| **pandapipes** | [e2nIEE/pandapipes](https://github.com/e2nIEE/pandapipes) | Solver per reti di tubazioni di fluidi, di impiego generale; verificare le ipotesi per reti irrigue. | Medio |
+
+### Canali, infiltrazione e drenaggio
+
+| Software | Repository | Applicazione | Pertinenza per l'irrigazione |
+| --- | --- | --- | --- |
+| **HydroHP** | [marcusnobrega-eng/HydroHP](https://github.com/marcusnobrega-eng/HydroHP) | Moto vario monodimensionale con equazioni di Saint-Venant e metodi ai volumi finiti. | Alto |
+| **OpenLISEM** | [vjetten/openlisem](https://github.com/vjetten/openlisem) | Modellazione di infiltrazione, deflusso superficiale ed erosione. | Alto |
+| **LGAR-C / CASAM** | [NOAA-OWP/LGAR-C](https://github.com/NOAA-OWP/LGAR-C) | Infiltrazione Green-Ampt stratificata, redistribuzione e ruscellamento. | Alto |
+| **PySWMM** | [pyswmm/pyswmm](https://github.com/pyswmm/pyswmm) | Interfaccia Python per reti di drenaggio e deflusso meteorico; non specifica per irrigazione. | Medio |
+| **simsoil** | [arthur-e/simsoil](https://github.com/arthur-e/simsoil) | Modello semplificato del movimento verticale dell'acqua in una colonna di terreno. | Alto |
+
+### Colture e fabbisogni irrigui
+
+| Software | Repository | Applicazione | Pertinenza per l'irrigazione |
+| --- | --- | --- | --- |
+| **PCSE** | [ajwdewit/pcse](https://github.com/ajwdewit/pcse) | Ambiente Python di simulazione colturale, con processi di crescita e disponibilità idrica. | Alto |
+| **DSSAT CSM** | [DSSAT/dssat-csm-os](https://github.com/DSSAT/dssat-csm-os) | Modelli di colture e interazioni suolo-pianta-atmosfera, gestione irrigua e produzione. | Alto |
+| **PCSE-Gym** | [WUR-AI/PCSE-Gym](https://github.com/WUR-AI/PCSE-Gym) | Ambiente sperimentale per apprendimento per rinforzo nella gestione colturale. | Medio |
+| **PyETo** | [woodcrafty/PyETo](https://github.com/woodcrafty/PyETo) | Calcolo Python dell'evapotraspirazione di riferimento; ultimo aggiornamento del progetto meno recente. | Medio |
+| **ET-Demands / CropET** | [DOI-BOR/et-demands](https://github.com/DOI-BOR/et-demands) | Modello dei fabbisogni idrici delle colture con coefficiente colturale duale. | Alto |
+
+### Falde e idrologia territoriale
+
+| Software | Repository | Applicazione | Pertinenza per l'irrigazione |
+| --- | --- | --- | --- |
+| **MODFLOW 6** | [MODFLOW-ORG/modflow6](https://github.com/MODFLOW-ORG/modflow6) | Motore USGS per il flusso sotterraneo; integrazione naturale con FloPy gia' catalogato. | Alto |
+| **Wflow.jl** | [Deltares/Wflow.jl](https://github.com/Deltares/Wflow.jl) | Modellazione idrologica distribuita per gestione della risorsa a scala territoriale. | Alto |
+| **HydroMT** | [Deltares/hydromt](https://github.com/Deltares/hydromt) | Strumenti per costruire, configurare e analizzare modelli idrologici riproducibili. | Medio |
+| **pywatershed** | [DOI-USGS/pywatershed](https://github.com/DOI-USGS/pywatershed) | Modello idrologico USGS in Python per simulare i processi del ciclo idrologico. | Alto |
+
+### Telerilevamento e produttivita' dell'acqua
+
+| Software | Repository | Applicazione | Pertinenza per l'irrigazione |
+| --- | --- | --- | --- |
+| **FAO pyWaPOR** | [un-fao/fao-wetl-pywapor](https://github.com/un-fao/fao-wetl-pywapor) | Stima satellitare di evaporazione, traspirazione e produzione di biomassa. | Alto |
+| **WaPORIPA** | [wateraccounting/WaPORIPA](https://github.com/wateraccounting/WaPORIPA) | Indicatori WaPOR per la valutazione delle prestazioni e della produttivita' irrigua. | Alto |
+
+**Valutazione preliminare:** la presenza nel catalogo non costituisce una validazione indipendente. Alcuni progetti sono modelli scientifici consolidati, altri sono interfacce, prototipi o strumenti di idrologia generale da adattare.
+
 ## Percorsi di studio e confronto
 
 1. **Aspersione e uniformità:** confrontare OpenIrri con Sprinkler Distribution Evaluator; distinguere le stime semplificate di uniformità dalle distribuzioni misurate/simulate.
@@ -163,4 +223,4 @@ Modelli di idraulica agraria, idrologia e strumenti collegati alla progettazione
 
 I link sopra rimandano ai repository originali e sono stati verificati come accessibili il **20 novembre 2026**.
 
-Questo repository è attualmente un **hub di documentazione e collegamenti**. Non contiene ancora submodule Git, fork o una pipeline software che esegua automaticamente i progetti elencati.
+Questo repository contiene **documentazione, schede e uno script di recupero delle sorgenti esterne**, oltre ai collegamenti. Non contiene copie integrali dei 61 codici esterni, submodule Git o una pipeline che esegua automaticamente i progetti.
