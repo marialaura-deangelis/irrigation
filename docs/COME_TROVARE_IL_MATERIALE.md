@@ -2,11 +2,14 @@
 
 ## Che cosa e' stato caricato su GitHub
 
-1. README.md: indice generale con i 61 repository esterni.
-2. docs/CATALOGO_COMPLETO.md: tabella unica di tutti i 61 progetti.
-3. docs/NUOVI_20_PROGETTI.md: schede sintetiche dei 20 progetti dell'ultima ricerca.
-4. examples/README.md: traccia didattica del confronto OpenIrri e calcolo analitico, predisposto anche per EPANET.
-5. scripts/scarica_repositories.py: strumento per clonare sul computer i repository selezionati.
+1. [README.md](../README.md): indice generale con i 61 repository esterni.
+2. [docs/CATALOGO_COMPLETO.md](CATALOGO_COMPLETO.md): tabella unica di tutti i 61 progetti.
+3. [docs/NUOVI_20_PROGETTI.md](NUOVI_20_PROGETTI.md): schede sintetiche dei 20 progetti dell'ultima ricerca.
+4. [examples/README.md](../examples/README.md): traccia didattica del confronto OpenIrri e calcolo analitico, predisposto anche per EPANET.
+5. [scripts/scarica_repositories.py](../scripts/scarica_repositories.py): strumento per clonare sul computer i repository selezionati.
+6. [LICENSE-CC-BY-4.0.md](../LICENSE-CC-BY-4.0.md): condizioni per il riutilizzo dei testi e dei materiali didattici originali sotto CC BY 4.0, esclusi i contenuti di terzi.
+7. [LICENSE-MIT](../LICENSE-MIT): licenza MIT applicabile allo script Python originale `scripts/scarica_repositories.py`.
+8. [docs/references/openirri.bib](references/openirri.bib): citazioni BibTeX dell'articolo scientifico OpenIrri in *SoftwareX* e dell'archivio software Zenodo v1.0.2.
 
 ## Che cosa non e' stato caricato
 
@@ -15,6 +18,8 @@ Non sono stati importati i sorgenti dei 61 software esterni, ne' create copie, f
 ## Dove si vedono i file in GitHub
 
 Aprire https://github.com/marialaura-deangelis/irrigation e selezionare il branch main. Nella scheda Code compaiono README.md e le cartelle docs, examples e scripts. Il README viene mostrato anche sotto l'elenco dei file.
+
+I file di licenza si trovano nella radice del repository; la bibliografia BibTeX e' nella sottocartella `docs/references/`.
 
 ## Come consultare un progetto
 
