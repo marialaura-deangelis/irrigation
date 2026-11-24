@@ -50,6 +50,14 @@
 | 40 | OpenValve | [fabiansteiner/OpenValve](https://github.com/fabiansteiner/OpenValve) |
 | 41 | Green-Ampt Interactive Simulator | [ziyaddmaa/Green-Ampt-Infiltration-Model-Interactive-Simulator](https://github.com/ziyaddmaa/Green-Ampt-Infiltration-Model-Interactive-Simulator) |
 
+### OpenIrri (#1): published references (verified 24 November 2026)
+
+**Journal article:** El-Naggar, A.G. (2026). OpenIrri: An open-source Python platform for solid-set sprinkler irrigation system design. SoftwareX, 35, 102912. https://doi.org/10.1016/j.softx.2026.102912
+
+**Archived software:** El-Naggar, A.G. (2026). OpenIrri — an open-source web application for the design of solid-set sprinkler irrigation systems (v1.0.2) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20925592
+
+The SoftwareX DOI identifies the journal article; the Zenodo DOI identifies version v1.0.2 of the software. [BibTeX](references/openirri.bib).
+
 ## Reti in pressione, pompe e regolazione (quarta selezione)
 
 | # | Software | Repository GitHub | Uso sintetico |

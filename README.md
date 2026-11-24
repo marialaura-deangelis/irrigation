@@ -24,6 +24,11 @@ Raccolta di repository open source per lo studio, la didattica e l'analisi tecni
 | **Sprinkler Distribution Evaluator** | [m-behery/sprinkler-distribution-evaluator](https://github.com/m-behery/sprinkler-distribution-evaluator) | Distribuzione pluviometrica, sovrapposizione degli irrigatori e uniformità su schemi rettangolari o triangolari. |
 | **OpenCADIrrigation** | [videjunior/opencadirrigation](https://github.com/videjunior/opencadirrigation) | Disegno e dimensionamento di reti irrigue in pressione, zone e condotte; esportazione di documentazione tecnica. |
 
+**OpenIrri — published references (verified 24 November 2026):**
+- Journal article: El-Naggar, A.G. (2026). OpenIrri: An open-source Python platform for solid-set sprinkler irrigation system design. SoftwareX, 35, 102912. https://doi.org/10.1016/j.softx.2026.102912
+- Archived software (specific release): El-Naggar, A.G. (2026). OpenIrri — an open-source web application for the design of solid-set sprinkler irrigation systems (v1.0.2) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20925592
+The article and archived release have distinct DOIs. [BibTeX references](docs/references/openirri.bib).
+
 ### Reti idrauliche e ottimizzazione
 
 | Software | Repository | Ambito di interesse |

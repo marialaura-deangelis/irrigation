@@ -51,4 +51,12 @@ Codice di riferimento OpenIrri: https://github.com/El-Naggar8876/openirri
 
 Manuale e toolkit EPANET: https://github.com/OpenWaterAnalytics/EPANET
 
+## OpenIrri: published references and reproducibility
+
+**Journal article:** El-Naggar, A.G. (2026). OpenIrri: An open-source Python platform for solid-set sprinkler irrigation system design. SoftwareX, 35, 102912. https://doi.org/10.1016/j.softx.2026.102912
+
+**Archived software:** El-Naggar, A.G. (2026). OpenIrri — an open-source web application for the design of solid-set sprinkler irrigation systems (v1.0.2) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20925592
+
+**Scope:** These references document the published design software and its archived release; they do not establish that v1.0.2 was executed for this exercise. The values above are analytical/formula-based and are **not EPANET solver output**. EPANET 2.2 was not run for this case. [BibTeX](../docs/references/openirri.bib).
+
 [Vai al catalogo](../docs/CATALOGO_COMPLETO.md)
