@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-FileCopyrightText: 2026 Maria Laura Deangelis
+# SPDX-License-Identifier: MIT
 """Elenca o clona, su richiesta esplicita, i repository linkati nel catalogo.
 
 Non esegue codice dei repository scaricati. Necessita di Python 3 e Git.
