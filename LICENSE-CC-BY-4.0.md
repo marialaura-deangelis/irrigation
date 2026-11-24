@@ -8,8 +8,8 @@ and original exercise text in the following files are licensed under the
 Creative Commons Attribution 4.0 International (CC BY 4.0) license:
 
 - `README.md`
-- original Markdown documentation under `docs/`, including its subdirectories
-- original Markdown teaching material under `examples/`, including its subdirectories
+- `docs/*.md`
+- `examples/*.md`
 
 Official legal code (which governs this grant):
 https://creativecommons.org/licenses/by/4.0/legalcode
