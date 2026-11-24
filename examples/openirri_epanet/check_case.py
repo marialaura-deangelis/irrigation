@@ -253,7 +253,7 @@ def run_epanet(lib_path: Path, inp: Path) -> dict:
     lib.EN_closeH.argtypes = [ct.c_void_p]
     lib.EN_close.argtypes = [ct.c_void_p]
     lib.EN_deleteproject.argtypes = [ct.c_void_p]
-    lib.EN_getversion.argtypes = [ct.c_void_p, ct.POINTER(ct.c_int)]
+    lib.EN_getversion.argtypes = [ct.POINTER(ct.c_int)]
     lib.EN_getnodeindex.argtypes = [ct.c_void_p, ct.c_char_p, ct.POINTER(ct.c_int)]
     lib.EN_getnodevalue.argtypes = [ct.c_void_p, ct.c_int, ct.c_int, ct.POINTER(ct.c_double)]
     lib.EN_getlinkindex.argtypes = [ct.c_void_p, ct.c_char_p, ct.POINTER(ct.c_int)]
@@ -272,7 +272,7 @@ def run_epanet(lib_path: Path, inp: Path) -> dict:
     hydraulics_open = False
     try:
         version = ct.c_int()
-        check(lib.EN_getversion(p, ct.byref(version)), "EN_getversion")
+        check(lib.EN_getversion(ct.byref(version)), "EN_getversion")
         if version.value < 20200 or version.value >= 20300:
             raise RuntimeError(f"Toolkit version {version.value} is not EPANET 2.2")
         with tempfile.TemporaryDirectory(prefix="openirri_epanet_") as temp:
