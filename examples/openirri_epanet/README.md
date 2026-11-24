@@ -127,3 +127,26 @@ Hazen–Williams Christiansen *F* factor as a precipitation-uniformity result.
 
 Reference: [EPA EPANET 2.2 User Manual](https://usepa.github.io/EPANET2.2/),
 particularly input file formats, pump curves, flow units and DDA options.
+
+## Laboratorio e verifica automatica
+
+La [guida per gli studenti](STUDENT_GUIDE.md) contiene i dati, le domande,
+la procedura di replica e i criteri di tracciabilita' dei risultati.
+La [suite di regressione](tests/test_case.py) verifica in modo indipendente
+la generazione degli input, i risultati analitici, la continuita' e
+la sensibilita' alle variazioni di diametro:
+
+```sh
+python -m unittest discover -s examples/openirri_epanet/tests -v
+```
+
+Il workflow [OpenIrri-EPANET 2.2 hydraulic reproduction](../../.github/workflows/openirri-epanet.yml)
+esegue gli stessi controlli, installa la dipendenza WNTR definita in
+[requirements-epanet.txt](requirements-epanet.txt), richiama l'autentica
+libreria EPANET 2.2 e conserva come artefatto **i risultati effettivi
+del solver** (JSON e log), se l'esecuzione ha successo.
+
+I risultati di `expected_analytic.json` restano sempre **analitici**
+e non devono essere scambiati per output EPANET. L'attivazione del workflow
+non equivale di per se' a una simulazione completata: lo stato della run
+deve essere controllato su GitHub Actions.

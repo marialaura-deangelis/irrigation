@@ -1,0 +1,66 @@
+name: OpenIrri-EPANET 2.2 hydraulic reproduction
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'examples/openirri_epanet/**'
+      - '.github/workflows/openirri-epanet.yml'
+  pull_request:
+    paths:
+      - 'examples/openirri_epanet/**'
+      - '.github/workflows/openirri-epanet.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout reference data and models
+        uses: actions/checkout@v4
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify analytical snapshots without external dependencies
+        run: |
+          python examples/openirri_epanet/check_case.py
+          python -m unittest discover -s examples/openirri_epanet/tests -v
+      - name: Install WNTR with EPANET 2.2 library
+        run: python -m pip install -r examples/openirri_epanet/requirements-epanet.txt
+      - name: Resolve the installed EPANET 2.2 shared library
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          from importlib.resources import files
+          import wntr
+          import wntr.epanet.toolkit as toolkit
+          path = Path(str(files('wntr.epanet').joinpath(toolkit.libepanet)))
+          if not path.is_file():
+              raise FileNotFoundError(f'EPANET shared library not found: {path}')
+          print('WNTR:', wntr.__version__)
+          print('EPANET library:', path)
+          with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as env:
+              env.write(f'EPANET_LIB={path}\n')
+          PY
+      - name: Run actual EPANET 2.2 and check signed deltas
+        run: |
+          mkdir -p "$RUNNER_TEMP/epanet_results"
+          set -o pipefail
+          python examples/openirri_epanet/check_case.py \
+            --epanet-lib "$EPANET_LIB" \
+            --solver-output "$RUNNER_TEMP/epanet_results/solver_2_2.json" \
+            | tee "$RUNNER_TEMP/epanet_results/solver_log.txt"
+        shell: bash
+      - name: Archive real solver outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: openirri-epanet-2-2-validation
+          path: ${{ runner.temp }}/epanet_results/
+          if-no-files-found: warn
+          retention-days: 30

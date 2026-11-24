@@ -234,8 +234,8 @@ Questo repository contiene **documentazione, schede e uno script di recupero del
 
 Questo repository utilizza licenze distinte per i materiali originali:
 
-- **Testi e materiali didattici originali** (`README.md`, `docs/*.md`, `examples/*.md`): [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), nei limiti precisati in [LICENSE-CC-BY-4.0.md](LICENSE-CC-BY-4.0.md).
-- **Script Python originale** (`scripts/scarica_repositories.py`): [MIT](https://opensource.org/license/mit), secondo il testo di [LICENSE-MIT](LICENSE-MIT).
+- **Testi e materiali didattici originali** (`README.md` e i file Markdown originali in `docs/` e `examples/`, incluse le sottocartelle): [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), nei limiti precisati in [LICENSE-CC-BY-4.0.md](LICENSE-CC-BY-4.0.md).
+- **Codice Python originale** (`scripts/scarica_repositories.py` e i file `.py` originali in `examples/openirri_epanet/`, comprese le sottocartelle): [MIT](https://opensource.org/license/mit), secondo il testo di [LICENSE-MIT](LICENSE-MIT).
 - **61 repository esterni collegati**: esclusi da entrambe le licenze precedenti. Ciascun progetto conserva la propria licenza; i link non autorizzano a copiare, modificare o ridistribuire il relativo codice al di fuori delle condizioni previste dai rispettivi titolari.
 
 Le licenze di questo repository non si estendono ad articoli scientifici, software, immagini, marchi o altri materiali di terzi citati o collegati. I riferimenti bibliografici, i DOI e i dati di fatto non sono dichiarati di proprieta' esclusiva: la citazione scientifica delle fonti resta distinta dall'attribuzione richiesta per i testi originali qui riutilizzati.

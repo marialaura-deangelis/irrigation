@@ -1,0 +1,3 @@
+# EPANET 2.2 Toolkit library is distributed with WNTR (not vendored here).
+# Install in a clean Python 3.11 virtual environment for reproducibility.
+wntr==1.5.0
