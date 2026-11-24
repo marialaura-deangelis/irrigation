@@ -36,7 +36,7 @@ confrontano i risultati qui pubblicati.
 4. Trovare la libreria EPANET 2.2 fornita da WNTR, per esempio su Linux:
 
    ```sh
-   python -c "from importlib.resources import files; import wntr.epanet.toolkit as t; print(files('wntr.epanet').joinpath(t.libepanet))"
+   python -c "from pathlib import Path; import sysconfig; print(next(Path(sysconfig.get_paths()['purelib']).glob('wntr/epanet/libepanet/linux-x64/libepanet22.so')))"
    ```
 
 5. Sostituire `<LIBRERIA>` con il percorso ottenuto e lanciare:

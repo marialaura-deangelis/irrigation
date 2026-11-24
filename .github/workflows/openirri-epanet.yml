@@ -36,13 +36,16 @@ jobs:
           python - <<'PY'
           import os
           from pathlib import Path
-          from importlib.resources import files
-          import wntr
-          import wntr.epanet.toolkit as toolkit
-          path = Path(str(files('wntr.epanet').joinpath(toolkit.libepanet)))
-          if not path.is_file():
-              raise FileNotFoundError(f'EPANET shared library not found: {path}')
-          print('WNTR:', wntr.__version__)
+          import sysconfig
+          from importlib.metadata import version
+          base = Path(sysconfig.get_paths()['purelib'])
+          candidates = sorted(base.glob('wntr/epanet/libepanet/linux-x64/libepanet22.so'))
+          if not candidates:
+              candidates = sorted(base.glob('wntr/**/libepanet22.so'))
+          if not candidates:
+              raise FileNotFoundError(f'EPANET 2.2 library not found under {base}')
+          path = candidates[0].resolve()
+          print('WNTR distribution:', version('wntr'))
           print('EPANET library:', path)
           with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as env:
               env.write(f'EPANET_LIB={path}\n')
