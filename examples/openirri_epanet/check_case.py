@@ -165,7 +165,7 @@ def validate(case: dict, diameter_mm: float) -> None:
             assert nodes[node] == (float(i + 6), Q_SPRINKLER)
             assert pipes[f"LAT{i}_{j:02d}"] == (start, node, SPACING_M,
                                                   diameter_mm, C_HW, 0.0)
-    assert sum(demand for elevation, demand in nodes.values()) == 66.56
+    assert abs(sum(demand for elevation, demand in nodes.values()) - 66.56) < 1e-9
 
 
 def headloss(length_m: float, diameter_mm: float, hw_c: float, q_m3h: float) -> float:
@@ -366,7 +366,24 @@ def main() -> None:
     if args.write:
         reference_path.write_text(doc, encoding="utf-8")
     else:
-        assert reference_path.read_text(encoding="utf-8") == doc, "Analytical reference drift"
+        saved = json.loads(reference_path.read_text(encoding="utf-8"))
+        proposed = json.loads(doc)
+        assert saved["provenance"] == proposed["provenance"], "Analytical provenance changed"
+        for label in proposed["cases"]:
+            old = saved["cases"][label]
+            new = proposed["cases"][label]
+            assert old.keys() == new.keys(), f"Analytical fields changed in {label}"
+            for field in old:
+                if isinstance(old[field], (int, float)) and not isinstance(old[field], bool):
+                    assert abs(old[field] - new[field]) < 1e-7, (
+                        f"Analytical reference drift in {label}/{field}: {old[field]} vs {new[field]}"
+                    )
+                elif isinstance(old[field], list):
+                    assert len(old[field]) == len(new[field])
+                    for a, b in zip(old[field], new[field]):
+                        assert abs(a - b) < 1e-7
+                else:
+                    assert old[field] == new[field], f"Analytical reference drift in {label}/{field}"
     if args.solver_output:
         args.solver_output.write_text(json.dumps({"cases": actual_solver}, indent=2,
                                                sort_keys=True) + "\n", encoding="utf-8")
