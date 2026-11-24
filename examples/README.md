@@ -60,3 +60,15 @@ Manuale e toolkit EPANET: https://github.com/OpenWaterAnalytics/EPANET
 **Scope:** These references document the published design software and its archived release; they do not establish that v1.0.2 was executed for this exercise. The values above are analytical/formula-based and are **not EPANET solver output**. EPANET 2.2 was not run for this case. [BibTeX](../docs/references/openirri.bib).
 
 [Vai al catalogo](../docs/CATALOGO_COMPLETO.md)
+
+## Riproducibilita' del confronto di rete
+
+La sottodirectory [openirri_epanet](openirri_epanet/README.md) contiene due file
+`.inp` deterministici (ali da 55,4 e 66,0 mm), uno script Python senza dipendenze
+per il calcolo indipendente e un file JSON di risultati **esclusivamente
+analitici**. Il modello aggiunge derivazioni esplicite da 1 m (DN interno
+110 mm); questa ipotesi comporta una piccola perdita supplementare rispetto
+alla tabella storica qui sopra. Il confronto numerico con il **solver** viene
+effettuato soltanto fornendo un'autentica libreria EPANET 2.2 allo script.
+Questa aggiunta non costituisce ne' una simulazione pluviometrica ne' una prova
+di esecuzione di OpenIrri.
